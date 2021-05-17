@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Basket = () => {
+ const Basket = () => {
   return <div>backet</div>;
 };
+
+export default Basket

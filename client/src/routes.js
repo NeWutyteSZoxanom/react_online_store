@@ -4,12 +4,12 @@ import Shop from "./pages/Shop";
 import Auth from "./pages/Auth";
 import DevicePage from "./pages/DevicePage";
 import {
+  REGISTRATION_ROUTE,
   ADMIN_ROUTE,
+  LOGIN_ROUTE,
+  SHOP_ROUTE,
   BASKET_ROUTE,
   DEVICE_ROUTE,
-  LOGIN_ROUTE,
-  REGISTRATION_ROUTE,
-  ShOP_ROUTE,
 } from "./utils/const";
 
 export const authRoutes = [
