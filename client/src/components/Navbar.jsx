@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { SHOP_ROUTE } from "../utils/const";
 import { NavLink } from "react-router-dom";
-import Link from "@material-ui/core/Link";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,32 +26,44 @@ const Navbar = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar className="toolbar">
-          <div>
-            <NavLink to={SHOP_ROUTE} className="divh1">
-              <Typography variant="h5" className={classes.title}>
-                <div className="divh1">Купи девайс </div>
-              </Typography>
-            </NavLink>
-          </div>
-          <div className="toolbar">
-            <NavLink to={SHOP_ROUTE} className="divh1">
-              <Typography variant="h6" className={classes.title}>
-                <div className="divh1et">Купи девайс</div>
-              </Typography>
-            </NavLink>
-            <NavLink to={SHOP_ROUTE} className="divh1">
-              <Typography variant="h6" className={classes.title}>
-                <div className="divh1et">Купи девайс</div>
-              </Typography>
-            </NavLink>
-            <NavLink to={SHOP_ROUTE} className="divh1">
-              <Typography variant="h6" className={classes.title}>
-                <div className="divh1et">Купи девайс</div>
-              </Typography>
-            </NavLink>
-          </div>
-        </Toolbar>
+        <Container fixed>
+          <Toolbar className="toolbar">
+            <div>
+              <NavLink to={SHOP_ROUTE} className="divh1">
+                <Typography variant="h5" className={classes.title}>
+                  <div className="divh1">Купи девайс </div>
+                </Typography>
+              </NavLink>
+            </div>
+            <div className="toolbar">
+              <div className="toolbarb">
+                <Button variant="outlined" color="intherit">
+                  ADMIN
+                </Button>
+              </div>
+              <div className="toolbarb">
+                <Button variant="outlined" color="intherit">
+                  LOGIN
+                </Button>
+              </div>
+              {/* <NavLink to={SHOP_ROUTE} className="divh1">
+                <Typography variant="h6" className={classes.title}>
+                  <div className="divh1et">Купи девайс</div>
+                </Typography>
+              </NavLink>
+              <NavLink to={SHOP_ROUTE} className="divh1">
+                <Typography variant="h6" className={classes.title}>
+                  <div className="divh1et">Купи девайс</div>
+                </Typography>
+              </NavLink>
+              <NavLink to={SHOP_ROUTE} className="divh1">
+                <Typography variant="h6" className={classes.title}>
+                  <div className="divh1et">Купи девайс</div>
+                </Typography>
+              </NavLink> */}
+            </div>
+          </Toolbar>
+        </Container>
       </AppBar>
     </div>
   );

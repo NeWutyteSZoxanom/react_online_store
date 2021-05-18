@@ -17,5 +17,78 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: -25PX;
 
+}
+.toolbarb{
+   
+    margin-left: 20px;
+
+}
+.auth_con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 150px 0 0 400px;
+
+}
+.auth_card{
+    width: 400px;
+    padding: 20px;
+}
+.auth_card_h{
+    margin-left:auto;
+}
+
+
+.panel_brand{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 30px 30px 0 0 ;
+    padding: 10px;
+}
+.panel_brand_p{
+    padding: 10px 30px ;
+    margin: 0 30px 0 0 ;
+    cursor: pointer;
+}
+.shop_content{
+    display: flex;
+    justify-content: space-between;
+}
+.panel_type{
+    display:inline;
+    background-color: teal;
+    height: 400px;
+    width: 300px;
+    margin: 30px 15px 0 0 ;
+
+}
+.panel_type_p{
+    width: 250px;
+    padding: 10px 30px ;
+    margin-top: 10px;
+    height: 30px;
+    cursor: pointer;
+
+}
+.panel_type_p_ch{
+    font-weight: bold;
+    font-size: 25px;
+}
+.decises{
+    display: flex;
+  flex-wrap: wrap;
+
+}
+
+.decise_c{
+    display: flex;
+}
+.decise{
+    height: 200px;
+    width: 150px;
+    margin: 30px 0 0 30px;
+    cursor: pointer;
 }
