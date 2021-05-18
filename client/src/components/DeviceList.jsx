@@ -4,7 +4,7 @@ s;
 const DeviceList = () => {
   return (
     <div>
-      <Paper elevation={3} className="decise" />
+      <Paper elevation={3} className="decise" square />
     </div>
   );
 };
