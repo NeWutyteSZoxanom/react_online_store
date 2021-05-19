@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 
 const DevicePage = () => {
   return (
-    <div>
+    <div className="device-page">
       <Grid container spacing={3}>
         <Grid item xs={5}>
           <Paper>xs</Paper>
