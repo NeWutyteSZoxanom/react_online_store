@@ -15,7 +15,7 @@ export default class DeviceStore {
       { id: 4, name: "ssung" },
       { id: 5, name: "sam" },
     ];
-    this._device = [
+    this._devices = [
       {
         id: 1,
         name: "12 pro",
@@ -52,7 +52,7 @@ export default class DeviceStore {
     this._brands = brands;
   }
   setDevices(device) {
-    this._device = device;
+    this._devices = device;
   }
   setSelectedType(type) {
     this._selectedType = type;
@@ -68,7 +68,7 @@ export default class DeviceStore {
     return this._brands;
   }
   get device() {
-    return this._device;
+    return this._devices;
   }
   get selectedType() {
     return this._selectedType;

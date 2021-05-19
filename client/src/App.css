@@ -86,9 +86,26 @@
 .decise_c{
     display: flex;
 }
+.decise_c_block{
+    display: flex;
+    flex-wrap: wrap;
+}
 .decise{
-    height: 200px;
+    height: 220px;
     width: 150px;
     margin: 30px 0 0 30px;
     cursor: pointer;
+}
+.decise_img{
+    height: 130px;
+    width: 150px;
+}
+.decise_price_rat{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.decise_price_info{
+    padding: 5px 10px 10px 10px;
 }
