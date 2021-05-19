@@ -113,3 +113,19 @@
     padding-top: 40px;
  
 }
+
+.device-img{
+    width: 100%;
+}
+
+.device-mar{
+   margin-top: 10px;
+}
+.butt_mar{
+   margin: 15px 0 0 0;
+
+}
+.butt_mar_p{
+  padding: 10px;
+
+}
