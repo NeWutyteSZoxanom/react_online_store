@@ -26,6 +26,15 @@ const useStyles = makeStyles((theme) => ({
 const AddDevice = () => {
   const { device } = useContext(Context);
 
+  const [info, setInfo] = useState([]);
+  const addInfo = () => {
+    setInfo([...info, { title: "", description: "", number: Date.now() }]);
+  };
+
+  const removeInfo = (number) => {
+    setInfo(info.filter((i) => i.number !== number));
+  };
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -137,6 +146,37 @@ const AddDevice = () => {
         </FormControl>
         <FormControl className={classes.formControl}>
           <input type="file"></input>
+        </FormControl>
+
+        {info.map((i) => (
+          <div key={i.number}>
+            <div>
+              <FormControl className={classes.formControl}>
+                <TextField id="standard-basic" label="Свойство" />{" "}
+              </FormControl>
+            </div>
+            <div>
+              <FormControl className={classes.formControl}>
+                <TextField id="standard-basic" label="Описание" />
+              </FormControl>
+            </div>
+            <div>
+              <FormControl className={classes.formControl}>
+                <Button
+                  onClick={() => removeInfo(i.number)}
+                  color="secondary"
+                  variant="contained"
+                >
+                  REM
+                </Button>{" "}
+              </FormControl>
+            </div>
+          </div>
+        ))}
+        <FormControl className={classes.formControl}>
+          <Button onClick={() => addInfo()} color="primary" variant="contained">
+            ADD INFO
+          </Button>
         </FormControl>
 
         <DialogActions>

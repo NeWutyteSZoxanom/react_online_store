@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import GradeOutlinedIcon from "@material-ui/icons/GradeOutlined";
 import IconButton from "@material-ui/core/IconButton";
-import { DEVICE_ROUTE, LOGIN_ROUTE } from "../utils/const";
-import { NavLink, useHistory } from "react-router-dom";
+import { DEVICE_ROUTE } from "../utils/const";
+import { useHistory } from "react-router-dom";
 import GradeIcon from "@material-ui/icons/Grade";
 
 const DeviceItem = ({ device }) => {
