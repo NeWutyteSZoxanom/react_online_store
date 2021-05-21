@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
+import { Context } from "../index";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import { NavLink, useLocation } from "react-router-dom";
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/const";
+import { NavLink, useLocation, useHistory } from "react-router-dom";
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "../utils/const";
 import { login, registration } from "../https/userApi";
 import axios from "axios";
+import { observer } from "mobx-react-lite";
+
 
 const useStyles = makeStyles({
   root: {
@@ -23,7 +26,8 @@ const useStyles = makeStyles({
   },
 });
 
-const Auth = () => {
+const Auth =  observer(() => {
+  const history = useHistory()
   const location = useLocation();
   const isLogin = location.pathname === LOGIN_ROUTE;
 
@@ -32,14 +36,27 @@ const Auth = () => {
 
   const classes = useStyles();
 
+
+  const { user } = useContext(Context);
+
   const click = async () => {
-    if (isLogin) {
-      const response = await login();
-    } else {
-      const response = await registration(email, password);
-      console.log(response);
+    try{
+      let data_user
+      if (isLogin) {
+        data_user = await login(email, password);
+      } else {
+        data_user = await registration(email, password);
+      }
+      user.setUser(user)
+      user.setAuth(true)
+      history.push(SHOP_ROUTE)
+    
+    } catch (e){
+      alert(  e.response.data.message)
+    
     }
   };
+    
 
   useEffect(
     () =>
@@ -97,6 +114,6 @@ const Auth = () => {
       </Card>
     </div>
   );
-};
+});
 
 export default Auth;

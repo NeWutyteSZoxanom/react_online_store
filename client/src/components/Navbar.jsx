@@ -24,6 +24,10 @@ const Navbar = () => {
   const classes = useStyles();
   const { user } = useContext(Context);
 
+  const logOut = () => {
+    user.setUser({});
+    user.setAuth(false);
+  };
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -37,24 +41,37 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="toolbar">
-              <div className="toolbarb">
-                <Button
-                  variant="outlined"
-                  color="intherit"
-                  onClick={() => history.push(ADMIN_ROUTE)}
-                >
-                  ADMIN
-                </Button>
-              </div>
+              <>
+                <div className="toolbarb">
+                  <Button
+                    variant="outlined"
+                    color="intherit"
+                    onClick={() => history.push(ADMIN_ROUTE)}
+                  >
+                    ADMIN
+                  </Button>
+                </div>
+                <div className="toolbarb">
+                  <Button
+                    variant="outlined"
+                    color="intherit"
+                    onClick={() => logOut()}
+                  >
+                    LOG OUT
+                  </Button>
+                </div>
+              </>
+
               <div className="toolbarb">
                 <Button
                   variant="outlined"
                   color="intherit"
                   onClick={() => history.push(LOGIN_ROUTE)}
                 >
-                  LOG OUT
+                  LOGIN
                 </Button>
               </div>
+
               {/* <NavLink to={SHOP_ROUTE} className="divh1">
                 <Typography variant="h6" className={classes.title}>
                   <div className="divh1et">Купи девайс</div>

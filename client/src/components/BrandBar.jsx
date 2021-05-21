@@ -8,12 +8,11 @@ import Tab from "@material-ui/core/Tab";
 const BrandBar = observer(() => {
   const { device } = useContext(Context);
 
-  console.log(device.setSelectedBrand.id);
   return (
     <>
       <Paper square elevation={3}>
         <Tabs
-          value={device.selectedBrand.id}
+          value={device.selectedBrand.id - 1}
           indicatorColor="primary"
           textColor="primary"
           //onChange={handleChange}

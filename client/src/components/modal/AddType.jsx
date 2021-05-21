@@ -5,8 +5,16 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { createType } from "../../https/deviceApi";
 
 const AddType = () => {
+  const [value, setValue] = useState("");
+
+  const addType = () => {
+    createType({ name: value }).then((data) => setValue(""));
+    handleClose();
+  };
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -40,11 +48,18 @@ const AddType = () => {
             label="Type"
             type="email"
             fullWidth
+            value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary" variant="contained">
+          <Button onClick={addType} color="primary" variant="contained">
             Add
+          </Button>
+          <Button onClick={handleClose} color="secondary" variant="contained">
+            CLOSE
           </Button>
         </DialogActions>
       </Dialog>

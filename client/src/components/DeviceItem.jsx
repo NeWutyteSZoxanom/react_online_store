@@ -20,16 +20,18 @@ const DeviceItem = ({ device }) => {
 
   return (
     <>
-      <Paper
-        elevation={3}
-        className="decise"
-        onClick={() => history.push(DEVICE_ROUTE + "/" + device.id)}
-      >
-        <img src={device.img} className="decise_img" />
+      <Paper elevation={3} className="decise">
+        <img
+          src={process.env.REACT_APP_API_URL + device.img}
+          className="decise_img"
+          onClick={() => history.push(DEVICE_ROUTE + "/" + device.id)}
+        />
 
         <div className="decise_price_info">
           <div>
-            <h3>{device.name} </h3>
+            <h3 onClick={() => history.push(DEVICE_ROUTE + "/" + device.id)}>
+              {device.name}{" "}
+            </h3>
           </div>
           <div className="decise_price_rat">
             <div>

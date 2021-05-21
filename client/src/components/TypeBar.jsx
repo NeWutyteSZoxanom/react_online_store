@@ -11,7 +11,7 @@ const TypeBar = observer(() => {
     <>
       <Paper square elevation={3}>
         <Tabs
-          value={device.selectedType.id}
+          value={device.selectedType.id - 1}
           indicatorColor="primary"
           textColor="primary"
           //onChange={handleChange}
